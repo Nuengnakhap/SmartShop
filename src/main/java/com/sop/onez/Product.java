@@ -7,6 +7,7 @@ public class Product {
 	private int id;
 	private String name;
 	private String description;
+	private double price;
 	public int getId() {
 		return id;
 	}
@@ -38,8 +39,6 @@ public class Product {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-
-	private double price;
 	
 	public Product(String name, String description, double price) {
 		super();
