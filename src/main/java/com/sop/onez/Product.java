@@ -1,9 +1,9 @@
 package com.sop.onez;
 
-import java.util.concurrent.atomic.AtomicInteger;
+//import java.util.concurrent.atomic.AtomicInteger;
 
 public class Product {
-	private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+//	private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
 	private int id;
 	private String name;
 	private String description;
@@ -42,7 +42,6 @@ public class Product {
 	
 	public Product(String name, String description, double price) {
 		super();
-		this.id = ID_GENERATOR.getAndIncrement();
 		this.name = name;
 		this.description = description;
 		this.price = price;
