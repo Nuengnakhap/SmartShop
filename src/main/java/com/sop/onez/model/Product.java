@@ -1,13 +1,31 @@
-package com.sop.onez;
+package com.sop.onez.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 
 //import java.util.concurrent.atomic.AtomicInteger;
 
+@Entity
 public class Product {
 //	private static AtomicInteger ID_GENERATOR = new AtomicInteger(0);
+	@Id
 	private int id;
 	private String name;
 	private String description;
 	private double price;
+	
+	public Product() {
+		super();
+	}
+	
+	public Product(String name, String description, double price) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -37,13 +55,6 @@ public class Product {
 	}
 
 	public void setPrice(double price) {
-		this.price = price;
-	}
-	
-	public Product(String name, String description, double price) {
-		super();
-		this.name = name;
-		this.description = description;
 		this.price = price;
 	}
 

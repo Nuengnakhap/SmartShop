@@ -1,4 +1,4 @@
-package com.sop.onez;
+package com.sop.onez.model;
 
 public class Order {
 	private String customerId;

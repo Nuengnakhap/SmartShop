@@ -4,6 +4,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.sop.onez.model.Order;
+import com.sop.onez.model.Product;
+
 public class OrderDetail {
 
 	private int id;
