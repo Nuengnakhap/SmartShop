@@ -9,6 +9,12 @@ CREATE TABLE product (
   price DOUBLE NOT NULL
 );
 
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id VARCHAR(250) UNIQUE NOT NULL,
+    order_num INT DEFAULT 1
+);
+
 CREATE TABLE order_detail (
     id INT AUTO_INCREMENT PRIMARY KEY,
     customer_id VARCHAR(250) NOT NULL,
@@ -16,15 +22,8 @@ CREATE TABLE order_detail (
     price DOUBLE NOT NULL,
     product_id INT NOT NULL,
     orderDate VARCHAR(250) NOT NULL,
-    FOREIGN KEY (product_id) REFERENCES product(id)
-);
-
-CREATE TABLE orders (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    customer_id VARCHAR(250) NOT NULL,
-    order_num INT DEFAULT 0,
-    order_id INT,
-    FOREIGN KEY (order_id) REFERENCES order_detail(id)
+    FOREIGN KEY (product_id) REFERENCES product(id),
+    FOREIGN KEY (customer_id) REFERENCES orders(customer_id)
 );
  
 INSERT INTO product (name, description, price) VALUES

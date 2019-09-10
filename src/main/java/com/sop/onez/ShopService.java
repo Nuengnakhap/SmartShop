@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.sop.onez.model.Order;
+import com.sop.onez.model.OrderDetail;
 import com.sop.onez.model.Product;
 
 public class ShopService {
@@ -69,7 +70,7 @@ public class ShopService {
 			Order order = item.setOrder(customerId);
 			order.setOrderNum(items.size() + 1);
 
-			item.setProduct(getProduct(item.getProductId()));
+//			item.setProduct(getProduct(item.getProductId()));
 
 			items.add(item);
 
@@ -86,7 +87,7 @@ public class ShopService {
 			Order order = item.setOrder(customerId);
 			order.setOrderNum(1);
 
-			item.setProduct(getProduct(item.getProductId()));
+//			item.setProduct(getProduct(item.getProductId()));
 			items.add(item);
 
 			orders.put("order", order);

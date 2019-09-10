@@ -1,21 +1,32 @@
-package com.sop.onez;
+package com.sop.onez.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.sop.onez.model.Order;
-import com.sop.onez.model.Product;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "ORDER_DETAIL")
 public class OrderDetail {
 
+	@Id
 	private int id;
+	@Column(name = "customer_id")
     private String customerId;
     private int quanity;
     private double price;
+    @Column(name = "product_id")
     private int productId;
+    @Column(name = "orderdate")
     private String orderDate;
-    private Product product;
+    
+    public OrderDetail() {
+    	super();
+    }
     
 	public OrderDetail(String customerId, int productId, int quanity) {
 		super();
@@ -24,7 +35,7 @@ public class OrderDetail {
 		this.productId = productId;
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		Date date = new Date();
-		this.setOrderDate(dateFormat.format(date));
+		this.orderDate = dateFormat.format(date);
 	}
 	
 	public int getId() {
@@ -38,15 +49,6 @@ public class OrderDetail {
 	public Order setOrder(String customerId) {
 		Order order = new Order(customerId);
 		return order;
-	}
-	
-	public Product getProduct() {
-		return product;
-	}
-	
-	public void setProduct(Product product) {
-		this.product = product;
-		this.price = product.getPrice() * quanity;
 	}
 	
 	public int getQuanity() {
